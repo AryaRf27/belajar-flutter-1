@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -56,33 +57,25 @@ class _MyHomePageState extends State<MyHomePage> {
           title: const Text("belajar flutter"),
           actions: [IconButton(onPressed: () {}, icon: Icon(Icons.menu))]),
       body: Center(
-          child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Column( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Text("Text 1"),
-              Text("Text 2"),
-              Text("Text 3"),
-            ],
-          ),
-          Column( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Text("Text 4"),
-              Text("Text 5"),
-              Text("Text 6"),
-            ],
-          ),
-          Column( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Text("Text 7"),
-              Text("Text 8"),
-              Text("Text 9"),
-            ],
-          ),
-        ],
-      )),
+        child: Column(
+          children: [
+            Expanded(
+              flex: 2,
+              child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                child: Text("ini text dalam container"),
+                color: Colors.red,
+              )),
+            const SizedBox(
+          height: 100.0,
+              ),
+            Expanded(child: Container(
+              color: Colors.blue,
+            )),
+          ]
+
+        )
+         ),
     );
   }
 }
